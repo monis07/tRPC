@@ -10,7 +10,7 @@ const trpc = createTRPCProxyClient<AppRouter>({
       url: 'http://localhost:3000',
       async headers(){
         return {
-            "authorization" :"token from client"
+            authorization :"token from client"
         }
       }
     }),

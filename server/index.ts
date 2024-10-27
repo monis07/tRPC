@@ -48,10 +48,11 @@ const server = createHTTPServer({
     router: appRouter,
     createContext(opts){
         let header = opts.req.headers["authorization"]
-        console.log("from create context")
+        console.log("from create context",header)
         return {
-            user : "haha "+ header
+            authorization : "haha from server"
         }
-    }  });
+    }  
+});
    
 server.listen(3000);

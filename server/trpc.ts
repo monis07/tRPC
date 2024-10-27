@@ -4,7 +4,11 @@ import { initTRPC } from '@trpc/server';
  * Initialization of tRPC backend
  * Should be done only once per backend!
  */
-const t = initTRPC.create();
+
+interface Context  {
+    authorization : string
+}
+const t = initTRPC.context<Context>().create();
  
 /**
  * Export reusable router and procedure helpers
